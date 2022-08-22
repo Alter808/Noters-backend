@@ -7,7 +7,7 @@ const bp = require('body-parser')
 const cors = require('cors')
 const routes = require('./routes/routes')
 
-const port = 8000
+// const port = 8000
 
 const mongoString = process.env.DATABASE_URL
 
@@ -35,6 +35,6 @@ app.use('/api', routes)
 
 app.use(express.json())
 
-app.listen(port, () => {
-  console.log(`Server Started at ${port}`)
+app.listen(process.env.PORT || 3000, () => {
+  console.log('server running')
 })
